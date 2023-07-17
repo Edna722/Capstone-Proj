@@ -16,11 +16,15 @@ directory = r'C:\Users\wanji\OneDrive\Desktop\Diabetic Admissio.py'
 if not os.path.exists(directory):
     os.makedirs(directory)
 
-    #Specify the file path
-    csv_path = os.path.join(os.path.expanduser('~'), 'Desktop', 'clean_data.csv')
+# Get the base directory path of the Streamlit app
+base_dir = os.path.dirname(os.path.abspath(__file__))
 
-    # Read the CSV file
-    df = pd.read_csv(csv_path)
+# Specify the relative path to the CSV file
+csv_path = os.path.join(base_dir, 'clean_data.csv')
+
+# Read the CSV file
+df = pd.read_csv(csv_path)
+
 
 # Separate features and target
 X = df.drop('readmitted', axis=1)
