@@ -16,8 +16,11 @@ directory = r'C:\Users\wanji\OneDrive\Desktop\Diabetic Admissio.py'
 if not os.path.exists(directory):
     os.makedirs(directory)
 
-# Load the clean data set
-df = pd.read_csv(r"C:\Users\wanji\Desktop\clean_data.csv")
+# Specify the file path
+csv_path = r"C:\Users\wanji\Desktop\clean_data.csv"
+
+# Read the CSV file
+df = pd.read_csv(csv_path)
 
 
 # Separate features and target
